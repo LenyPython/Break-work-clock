@@ -18,5 +18,11 @@ body {
   font-size: 4em;
   font-weight: 600;
 }
+.App footer h4 {
+  font-size: 0.8em;
+}
+.App footer h4 span {
+  color: blue;
+}
 
 /*# sourceMappingURL=App.css.map */

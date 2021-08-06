@@ -1,0 +1,32 @@
+#controler {
+  min-width: 60vw;
+  padding: 25px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-around;
+}
+#controler h2 {
+  font-size: 1.8em;
+  margin: 5px auto;
+}
+#controler div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#controler button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: 1000;
+  background: transparent;
+  color: white;
+}
+#controler p {
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=controls.css.map */

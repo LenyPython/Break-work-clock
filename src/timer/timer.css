@@ -1,7 +1,37 @@
 #timer-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 300px;
+  min-height: 250px;
   padding: 20px;
   border-radius: 25px;
-  border: 5px solid #26d980;
+  border: 5px solid white;
+}
+#timer-label h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+#timer-label p {
+  font-size: 2em;
+  font-weight: 600;
+}
+#timer-label button {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 20px;
+  text-transform: uppercase;
+  margin: 0 15px;
+  border: 6px solid white;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.6em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#timer-label button:hover {
+  transform: translateY(-10px) scale(110%);
 }
 
 /*# sourceMappingURL=timer.css.map */

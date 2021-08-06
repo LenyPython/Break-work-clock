@@ -7,12 +7,13 @@ const Timer = ({pause, session}) => {
   let breakDuration = pause
   let seconds = 0
   let sessionTime = true
+  var countDown
 
   const handlePlayPause = event => {
     let command = event.target.innerText
-    if (command === 'Play >>>') {
-      event.target.innerText = 'Pause ||'
-      var countDown = setInterval(() => {
+    if (command === 'PLAY >>>') {
+      event.target.innerText = 'PAUSE ||'
+      countDown = setInterval(() => {
         if (sessionTime) {
           if (seconds === 0) {
             sessionDuration -= 1
@@ -36,7 +37,7 @@ const Timer = ({pause, session}) => {
 
       }, 1000)
     } else {
-      event.target.innerText = 'Play >>>'
+      event.target.innerText = 'PLAY >>>'
       clearInterval(countDown)
     }
   }
@@ -46,6 +47,9 @@ const Timer = ({pause, session}) => {
     breakDuration = pause
     seconds = 0
     sessionTime = true
+    let timeLeft = `${sessionDuration < 10 ? '0' + sessionDuration : sessionDuration}:${seconds < 10 ? '0' + seconds : seconds}`
+    document.querySelector('#time-left').innerText = timeLeft
+    document.querySelector('#name-label').innerText = 'Session'
   }
 
   return (
@@ -54,8 +58,10 @@ const Timer = ({pause, session}) => {
       <p id='time-left'>
         {`${sessionDuration < 10 ? '0' + sessionDuration : sessionDuration}:${seconds < 10 ? '0' + seconds : seconds}`}
       </p>
-      <button id='start_stop' onClick={handlePlayPause}>Play >>></button>
-      <button id='reset' onClick={handleReset}>reset</button>
+      <div>
+        <button id='start_stop' onClick={handlePlayPause}>Play >>></button>
+        <button id='reset' onClick={handleReset}>reset</button>
+      </div>
     </div>
   )
 }

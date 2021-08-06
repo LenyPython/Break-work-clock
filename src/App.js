@@ -22,7 +22,7 @@ const App = () => {
         session={session}
       />
       <footer>
-        <h4>Made by <span>Piotr Lenartowicz</span></h4>
+        <h4>Made by <br /><span>Piotr Lenartowicz</span></h4>
       </footer>
 
     </div>
