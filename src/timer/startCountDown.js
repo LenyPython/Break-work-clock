@@ -20,14 +20,15 @@ const startCountDown = (sessionTime, breakTime, isSessionTime, dispatch) => {
     seconds = 0
   }
 
-  let countDown = action => {
+  let countDown = breakSessionChangeFunc => {
     if (seconds === 0) {
       minutes -= 1
       seconds = 60
     }
     seconds -= 1
+    if (seconds < 10) document.querySelector('#time-left').classList.toggle('red')
     timeLeft = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
-    if (minutes === 0 && seconds === 0) action()
+    if (minutes === 0 && seconds === 0) breakSessionChangeFunc()
   }
 
 

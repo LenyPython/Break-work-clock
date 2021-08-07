@@ -3,8 +3,8 @@ import startCountDown from './startCountDown'
 import './timer.css'
 import {
   RESET,
+  setControls,
   setSessionId,
-  setSessionState
 } from '../state/State'
 
 
@@ -19,9 +19,11 @@ const Timer = ({state, dispatch}) => {
       event.target.innerText = 'PAUSE ||'
       let countDown = startCountDown(sessionTime, breakTime, sessionState, dispatch)
       dispatch({type: setSessionId, payload: countDown})
+      dispatch({type: setControls, payload: true})
     } else {
       event.target.innerText = 'PLAY >'
       clearInterval(state.sessionId)
+      dispatch({type: setControls, payload: false})
     }
   }
 

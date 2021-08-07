@@ -15,8 +15,9 @@
   margin: 0;
 }
 #timer-label p {
-  font-size: 2em;
-  font-weight: 600;
+  font-size: 5em;
+  font-weight: 800;
+  margin: 10px;
 }
 #timer-label button {
   background: rgba(255, 255, 255, 0.2);
@@ -33,7 +34,11 @@
 }
 #timer-label button:hover {
   transform: translateY(-10px) scale(110%);
-  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.red {
+  color: maroon;
 }
 
 /*# sourceMappingURL=timer.css.map */

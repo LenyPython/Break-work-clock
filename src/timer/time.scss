@@ -14,8 +14,9 @@
 		margin: 0;
 	}
 	p{
-		font-size: 2em;
-		font-weight: 600;
+		font-size: 5em;
+		font-weight: 800;
+		margin: 10px;
 	}
 	button {
 		background: hsla(0,100%,100%,.2);
@@ -34,4 +35,7 @@
 			box-shadow: 0 10px 0 0 hsla(0, 0%, 0%, 0.3);
 		}
 	}
+}
+.red{
+	color: hsl(0, 100%, 25%)
 }

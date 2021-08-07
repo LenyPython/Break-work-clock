@@ -10,18 +10,22 @@ const Controls = ({state, dispatch}) => {
   let session = state.sessionTime
 
   const handlePause = event => {
+    if (state.blockControls) return
     if (event.target.innerText === '^') {
       if (pause < 60) dispatch({type: setBreakTime, payload: pause + 1})
+      return
     }
-    else if (pause > 1) dispatch({type: setBreakTime, payload: pause - 1})
+    if (pause > 1) dispatch({type: setBreakTime, payload: pause - 1})
   }
 
 
   const handleSession = event => {
+    if (state.blockControls) return
     if (event.target.innerText === '^') {
       if (session < 60) dispatch({type: setSessionTime, payload: session + 1})
+      return
     }
-    else if (session > 1) dispatch({type: setSessionTime, payload: session - 1})
+    if (session > 1) dispatch({type: setSessionTime, payload: session - 1})
   }
 
 

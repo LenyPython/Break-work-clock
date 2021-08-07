@@ -2,13 +2,15 @@ const setBreakTime = 'BreakTime'
 const setSessionTime = 'SessionTime'
 const setSessionId = 'SessionId'
 const setSessionState = 'SessionState'
+const setControls = 'Controls'
 const RESET = 'reset'
 
 const basicState = {
   breakTime: 5,
   sessionTime: 25,
   sessionId: '',
-  sessionState: true
+  sessionState: true,
+  blockControls: false
 }
 
 const reducer = (state, action) => {
@@ -21,6 +23,8 @@ const reducer = (state, action) => {
       return {...state, sessionId: action.payload}
     case setSessionState:
       return {...state, sessionState: action.payload}
+    case setControls:
+      return {...state, blockControls: action.payload}
     case RESET:
       return basicState
     default:
@@ -33,6 +37,7 @@ export {
   reducer,
   basicState,
   RESET,
+  setControls,
   setBreakTime,
   setSessionState,
   setSessionId,

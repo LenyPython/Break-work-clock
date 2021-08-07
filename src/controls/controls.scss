@@ -1,7 +1,6 @@
 #controler{
 	min-width: 60vw;
-	padding: 25px;
-	margin: 0 auto 50px;
+	margin: 0 auto 20px;
 	display: flex;
 	justify-content: space-around;
 	h2{
@@ -24,7 +23,8 @@
 		color: white;
 	}
 	p{
-		font-size: 1.3em;
-		font-weight: 800;
+		margin: 25px;
+		font-size: 3em;
+		font-weight: 1000;
 	}
 }
