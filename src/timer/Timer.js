@@ -1,20 +1,23 @@
 import React from 'react'
 import './timer.css'
+import {
+  RESET,
+  setSessionId
+} from '../state/State'
 
 
-const Timer = ({pause, session, setPause, setSession}) => {
-  let sessionDuration = session
-  let breakDuration = pause
+const Timer = ({state, dispatch}) => {
+  let sessionDuration = state.sessionTime
+  let breakDuration = state.breakTime
+  let sessionTime = state.sessionState
   let seconds = 0
-  let sessionTime = true
-  var countDown
 
   const handlePlayPause = event => {
     let command = event.target.innerText
     let timeLeft
     if (command === 'PLAY >') {
       event.target.innerText = 'PAUSE ||'
-      countDown = setInterval(() => {
+      let countDown = setInterval(() => {
         if (sessionTime) {
           if (seconds === 0) {
             sessionDuration -= 1
@@ -36,16 +39,16 @@ const Timer = ({pause, session, setPause, setSession}) => {
 
         document.querySelector('#time-left').innerText = timeLeft
       }, 1000)
+      dispatch({type: setSessionId, payload: countDown})
     } else {
       event.target.innerText = 'PLAY >'
-      clearInterval(countDown)
+      clearInterval(state.sessionId)
     }
   }
 
   const handleReset = () => {
-    clearInterval(countDown)
-    setPause(5)
-    setSession(25)
+    clearInterval(state.sessionId)
+    dispatch({type: RESET})
     seconds = 0
     sessionTime = true
     document.querySelector('#start_stop').innerText = 'PLAY >'

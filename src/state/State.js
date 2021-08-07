@@ -2,8 +2,9 @@ const setBreakTime = 'BreakTime'
 const setSessionTime = 'SessionTime'
 const setSessionId = 'SessionId'
 const setSessionState = 'SessionState'
+const RESET = 'reset'
 
-const state = {
+const basicState = {
   breakTime: 5,
   sessionTime: 25,
   sessionId: '',
@@ -20,13 +21,18 @@ const reducer = (state, action) => {
       return {...state, sessionId: action.payload}
     case setSessionState:
       return {...state, sessionState: action.payload}
+    case RESET:
+      return basicState
+    default:
+      return state
   }
 
 }
 
 export {
   reducer,
-  state,
+  basicState,
+  RESET,
   setBreakTime,
   setSessionState,
   setSessionId,
