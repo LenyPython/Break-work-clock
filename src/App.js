@@ -12,17 +12,19 @@ const App = () => {
         <h1>Work Break Time</h1>
       </header>
       <Controls
-        setPause={setPause}
-        setSession={setSession}
         pause={pause}
         session={session}
+        setPause={setPause}
+        setSession={setSession}
       />
       <Timer
         pause={pause}
         session={session}
+        setPause={setPause}
+        setSession={setSession}
       />
       <footer>
-        <h4>Made by <br /><span>Piotr Lenartowicz</span></h4>
+        <h4>Made by <span>Piotr Lenartowicz</span></h4>
       </footer>
 
     </div>

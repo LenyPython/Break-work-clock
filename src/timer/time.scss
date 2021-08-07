@@ -19,6 +19,7 @@
 	}
 	button {
 		background: hsla(0,100%,100%,.2);
+		width: 200px;
 		padding: 5px 20px;
 		text-transform: uppercase;
 		margin: 0 15px;
@@ -30,6 +31,7 @@
 		cursor:pointer;
 		&:hover{
 			transform: translateY(-10px) scale(110%);
+			box-shadow: 0 10px 0 0 hsla(0, 0%, 0%, 0.3);
 		}
 	}
 }

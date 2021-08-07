@@ -8,6 +8,10 @@ body {
   color: white;
 }
 
+h1 {
+  margin: 30px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
