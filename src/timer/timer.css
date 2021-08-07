@@ -1,4 +1,4 @@
-#timer-label {
+#timer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -9,17 +9,17 @@
   border-radius: 25px;
   border: 5px solid white;
 }
-#timer-label h2 {
+#timer h2 {
   font-size: 2.5em;
   font-weight: 700;
   margin: 0;
 }
-#timer-label p {
+#timer p {
   font-size: 5em;
   font-weight: 800;
   margin: 10px;
 }
-#timer-label button {
+#timer button {
   background: rgba(255, 255, 255, 0.2);
   width: 200px;
   padding: 5px 20px;
@@ -32,7 +32,7 @@
   transition: all 0.3s;
   cursor: pointer;
 }
-#timer-label button:hover {
+#timer button:hover {
   transform: translateY(-10px) scale(110%);
   box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.3);
 }

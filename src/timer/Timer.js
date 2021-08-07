@@ -10,14 +10,12 @@ import {
 
 const Timer = ({state, dispatch}) => {
   let sessionTime = state.sessionTime
-  let breakTime = state.breakTime
-  let sessionState = state.sessionState
 
   const handlePlayPause = event => {
     let command = event.target.innerText
     if (command === 'PLAY >') {
       event.target.innerText = 'PAUSE ||'
-      let countDown = startCountDown(sessionTime, breakTime, sessionState, dispatch)
+      let countDown = startCountDown()
       dispatch({type: setSessionId, payload: countDown})
       dispatch({type: setControls, payload: true})
     } else {
@@ -32,12 +30,15 @@ const Timer = ({state, dispatch}) => {
     dispatch({type: RESET})
     document.querySelector('#start_stop').innerText = 'PLAY >'
     document.querySelector('#time-left').innerText = '25:00'
-    document.querySelector('#name-label').innerText = 'Session'
+    document.querySelector('#timer-label').innerText = 'Session'
+    document.querySelector('#time-left').classList.remove('red')
+    document.querySelector('#beep').pause()
+    document.querySelector('#beep').currentTime = 0
   }
 
   return (
-    <div id='timer-label'>
-      <h2 id='name-label'>Session</h2>
+    <div id='timer'>
+      <h2 id='timer-label'>Session</h2>
       <p id='time-left'>
         {`${sessionTime < 10 ? '0' + sessionTime : sessionTime}:00`}
       </p>
@@ -45,6 +46,11 @@ const Timer = ({state, dispatch}) => {
         <button id='start_stop' onClick={handlePlayPause}>Play ></button>
         <button id='reset' onClick={handleReset}>reset</button>
       </div>
+      <audio
+        id="beep"
+        preload="auto"
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+      />
     </div>
   )
 }
