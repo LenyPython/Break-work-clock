@@ -13,7 +13,7 @@ const Controls = ({state, dispatch}) => {
     if (event.target.innerText === '^') {
       if (pause < 60) dispatch({type: setBreakTime, payload: pause + 1})
     }
-    else if (pause > 0) dispatch({type: setBreakTime, payload: pause - 1})
+    else if (pause > 1) dispatch({type: setBreakTime, payload: pause - 1})
   }
 
 
@@ -21,7 +21,7 @@ const Controls = ({state, dispatch}) => {
     if (event.target.innerText === '^') {
       if (session < 60) dispatch({type: setSessionTime, payload: session + 1})
     }
-    else if (session > 0) dispatch({type: setSessionTime, payload: session - 1})
+    else if (session > 1) dispatch({type: setSessionTime, payload: session - 1})
   }
 
 

@@ -8,7 +8,7 @@ const basicState = {
   breakTime: 5,
   sessionTime: 25,
   sessionId: '',
-  sessionState: false
+  sessionState: true
 }
 
 const reducer = (state, action) => {
